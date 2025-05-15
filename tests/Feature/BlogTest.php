@@ -27,8 +27,10 @@ class BlogTest extends TestCase
     public function testBlogPostPageIsAccessibleAndContainsPost()
     {
         $user = User::factory()->create();
+        
         $post = Post::factory()->create([
             'user_id' => $user->id,
+            
         ]);
 
         $response = $this->get(route('post', $post));
